@@ -1,6 +1,12 @@
 <div>
     <form [formGroup]="formulariosPersona">
         <div class="p-field p-grid">
+            <label for="firstname3" class="p-col-fixed" style="width:100px">Numero tipoDocumento</label>
+            <div class="p-col">
+                <input id="firstname3" type="number" formControlName="nombres" pInputText> 
+            </div>
+        </div>
+        <div class="p-field p-grid">
             <label for="firstname3" class="p-col-fixed" style="width:100px">Nombres</label>
             <div class="p-col">
                 <input id="firstname3" type="text" formControlName="nombres" pInputText> 
@@ -28,7 +34,7 @@
         <div class="p-field p-grid">
             <label for="lastname3" class="p-col-fixed" style="width:100px">Tipo documento</label>
             <div class="p-col">
-                <input id="lastname3" type="text" formControlName="documento" pInputText> 
+                <input id="lastname3" type="text" formControlName="tipoDocumento" pInputText> 
             </div>
         </div>
         <div class="p-field p-grid">

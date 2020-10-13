@@ -35,6 +35,7 @@ export class PersonaComponent implements OnInit {
   public crear(): void {
     if (this.formulariosPersona.valid) {
       this.persona = new PersonaDTO();
+      this.persona.documento = this.formulariosPersona.controls.documento.value;
       this.persona.nombres = this.formulariosPersona.controls.nombres.value;
       this.persona.apellidos = this.formulariosPersona.controls.apellidos.value;
       this.persona.fechaNacimiento = this.formulariosPersona.controls.fechaNacimiento.value;
