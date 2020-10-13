@@ -1,0 +1,68 @@
+<div>
+    <form [formGroup]="formulariosPersona">
+        <div class="p-field p-grid">
+            <label for="firstname3" class="p-col-fixed" style="width:100px">Nombres</label>
+            <div class="p-col">
+                <input id="firstname3" type="text" formControlName="nombres" pInputText> 
+            </div>
+        </div>
+        
+        <div class="p-field p-grid">
+            <label for="apellidos" class="p-col-fixed" style="width:100px">Apellidos</label>
+            <div class="p-col">
+                <input id="apellidos" type="text" formControlName="apellidos" pInputText> 
+            </div>
+        </div>
+        <div class="p-field p-grid">
+            <label for="firstname3" class="p-col-fixed" style="width:100px">Direccion</label>
+            <div class="p-col">
+                <input id="firstname3" type="text" formControlName="direccion" pInputText> 
+            </div>
+        </div>
+        <div class="p-field p-grid">
+            <label for="lastname3" class="p-col-fixed" style="width:100px">Celular</label>
+            <div class="p-col">
+                <input id="lastname3" type="text" formControlName="celular" pInputText> 
+            </div>
+        </div>
+        <div class="p-field p-grid">
+            <label for="lastname3" class="p-col-fixed" style="width:100px">Tipo documento</label>
+            <div class="p-col">
+                <input id="lastname3" type="text" formControlName="documento" pInputText> 
+            </div>
+        </div>
+        <div class="p-field p-grid">
+                <span class="p-float-label"> 
+                <label for="lastname3" class="p-col-fixed" style="width:100px">Fecha Nacimiento</label>
+                <p-calendar formControlName="fechaNacimiento" > </p-calendar>
+            </span>
+        </div>
+        <button pButton type="button" label="Success" class="p-button-success" (click)="crear()">Agregar</button>
+    </form>
+</div>
+
+<p-table [value]="listarTodo()">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Codigo</th>
+            <th>Nombres</th>
+            <th>Apelllidos</th>
+            <th>Edad</th>
+            <th>Género</th>
+            <th>Acciones</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-persona>
+        <tr  >
+            <td>{{persona.id}}</td>
+            <td>{{persona.nombres}}</td>
+            <td>{{persona.apellidos}}</td>
+            <td>{{persona.edad}}</td>
+            <td>{{persona.genero}}</td>
+            <td>
+                <button (click)="actualizar(persona)" pButton type="button" label="Editar" class="p-button-warning"></button>
+                <button (click)="eliminar(persona.id)" pButton type="button" label="Eliminar" class="p-button-danger"></button>
+            </td>
+        </tr>
+    </ng-template>
+</p-table>
